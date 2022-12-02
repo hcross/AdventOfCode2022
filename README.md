@@ -11,7 +11,7 @@ The goal here is to try to get the basics of each language tried.
 | Day | Part 1 | Part 2 | Lang/Fwk |
 | --- | ------ | ------ | -------- |
 | 1   | ✅     | ✅     | NodeJS   |
-| 2   | 🕕     | 🕕     |          |
+| 2   | ✅     | ✅     | Rust     |
 | 3   | 🕕     | 🕕     |          |
 | 4   | 🕕     | 🕕     |          |
 | 5   | 🕕     | 🕕     |          |

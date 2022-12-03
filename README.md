@@ -12,7 +12,7 @@ The goal here is to try to get the basics of each language tried.
 | --- | ------ | ------ | -------- |
 | 1   | ✅     | ✅     | NodeJS   |
 | 2   | ✅     | ✅     | Rust     |
-| 3   | 🕕     | 🕕     |          |
+| 3   | ✅     | ✅     | Awk      |
 | 4   | 🕕     | 🕕     |          |
 | 5   | 🕕     | 🕕     |          |
 | 6   | 🕕     | 🕕     |          |

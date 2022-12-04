@@ -14,7 +14,7 @@ The goal here is to try to get the basics of each language tried.
 | 2   | ✅     | ✅     | Rust     |
 | 3   | ✅     | ✅     | Awk      |
 | 4   | ✅     | ✅     | Scala    |
-| 5   | 🕕     | 🕕     |          |
+| 5   | ✅     | ✅     | C        |
 | 6   | 🕕     | 🕕     |          |
 | 7   | 🕕     | 🕕     |          |
 | 8   | 🕕     | 🕕     |          |

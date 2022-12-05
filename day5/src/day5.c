@@ -21,13 +21,14 @@ static const int EMPTY_STACK = -1;
 static const int NB_STACKS = 9;
 static const int REAL_NB_STACKS = NB_STACKS+1;
 static const char SEPARATOR[] = " ";
+static const bool verbose = true;
 
 int *stacks_indexes;
 char **stacks;
 
 void init() {
-    stacks_indexes = (int *) malloc(REAL_NB_STACKS * sizeof(int));             // eq. int[REAL_NB_STACKS]
-    stacks = (char **) malloc(REAL_NB_STACKS * sizeof(char *));                // ep. char[REAL_NB_STACKS][STACK_CAPACITY]
+    stacks_indexes = (int *) malloc(REAL_NB_STACKS * sizeof(int));  // eq. int[REAL_NB_STACKS]
+    stacks = (char **) malloc(REAL_NB_STACKS * sizeof(char *));     // ep. char[REAL_NB_STACKS][STACK_CAPACITY]
     for (int i=0; i< REAL_NB_STACKS; i++)
         stacks[i] = (char *) malloc(STACK_CAPACITY * sizeof(char));
     
@@ -35,16 +36,23 @@ void init() {
         stacks_indexes[i] = EMPTY_STACK;
 }
 
+void deinit() {
+    for (int i=0; i< REAL_NB_STACKS; i++)
+        free(stacks[i]);
+    free(stacks);
+    free(stacks_indexes);
+}
+
 void push(unsigned int stack_index, char c) {
-    printf("\npush(%i,'%c') - stack size: %i", stack_index, c, stacks_indexes[stack_index]);
+    if (verbose) printf("\npush(%i,'%c') - stack size: %i", stack_index, c, stacks_indexes[stack_index]);
     stacks_indexes[stack_index] = stacks_indexes[stack_index]+1;
     stacks[stack_index][stacks_indexes[stack_index]] = c;
 }
 
 char pop(unsigned int stack_index) {
-    printf("\npop(%i) - stack size: %i", stack_index, stacks_indexes[stack_index]);
+    if (verbose) printf("\npop(%i) - stack size: %i", stack_index, stacks_indexes[stack_index]);
     if (stacks_indexes[stack_index] == EMPTY_STACK) {
-        sprintf(stderr, "Trying to pop en empty stack");
+        if (verbose) sprintf(stderr, "Trying to pop en empty stack");
         return -1;
     }
 
@@ -55,7 +63,7 @@ char pop(unsigned int stack_index) {
 
 void reverse(unsigned int stack_index) {
     if (stack_index == NB_STACKS) {
-        sprintf(stderr, "Trying to reverse the temp stack");
+        if (verbose) sprintf(stderr, "Trying to reverse the temp stack");
         return -1;
     }
 
@@ -81,8 +89,7 @@ void print_tops() {
     }
 }
 
-int main(int argc, char *argv[])
-{
+void run_puzzle(void (*op)(int, int, int)) {
     init();
 
     FILE *file;
@@ -92,14 +99,14 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    printf("Fichier '%s' ouvert\n", FILENAME);
+    if (verbose) printf("Fichier '%s' ouvert\n", FILENAME);
     bool header_done = false;
     char line[BUFFER_SIZE];
     while(fgets(line, BUFFER_SIZE, file) != NULL) {
-        if (strlen(line) > 1) printf("(%i) %s", strlen(line), line);
+        if (verbose && strlen(line) > 1) printf("(%i) %s", strlen(line), line);
         if (!header_done) {
             if (line[0] == ' ') {
-                printf("Found end of header");
+                if (verbose) printf("Found end of header");
                 for (int i=0; i<NB_STACKS; i++) reverse(i);
                 header_done = true;
             } else if (line[0] == HEADER_STARTING_CHAR) {
@@ -117,18 +124,32 @@ int main(int argc, char *argv[])
                 int from = atoi(strtok(NULL, SEPARATOR))-1;
                 strtok(NULL, SEPARATOR);
                 int to = atoi(strtok(NULL, SEPARATOR))-1;
-                char c;
-                for (int i=0; i<nb; i++) {
-                    c = pop(from);
-                    push(to, c);
-                }
+                
+                (*op)(nb, from, to);
             }
         }
     }
-
+    
     print_tops();
-
     fclose(file);
+    deinit();
+}
 
+void puzzle1_op(int nb, int from, int to) {
+    char c;
+    for (int i=0; i<nb; i++) {
+        c = pop(from);
+        push(to, c);
+    }
+}
+
+void run_puzzle1() {
+    printf("Puzzle 1:");
+    run_puzzle(&puzzle1_op);
+}
+
+int main(int argc, char *argv[])
+{
+    run_puzzle1();
     return 0;
 }

@@ -16,7 +16,7 @@ The goal here is to try to get the basics of each language tried.
 | 4   | ✅     | ✅     | Scala    |
 | 5   | ✅     | ✅     | C        |
 | 6   | ✅     | ✅     | V        |
-| 7   | 🕕     | 🕕     |          |
+| 7   | ✅     | ✅     | Kotlin   |
 | 8   | 🕕     | 🕕     |          |
 | 9   | 🕕     | 🕕     |          |
 | 10  | 🕕     | 🕕     |          |

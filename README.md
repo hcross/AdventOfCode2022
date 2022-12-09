@@ -18,7 +18,7 @@ The goal here is to try to get the basics of each language tried.
 | 6   | ✅     | ✅     | V        |
 | 7   | ✅     | ✅     | Kotlin   |
 | 8   | ✅     | ✅     | Python   |
-| 9   | 🕕     | 🕕     |          |
+| 9   | ✅     | ✅     | Pascal   |
 | 10  | 🕕     | 🕕     |          |
 | 11  | 🕕     | 🕕     |          |
 | 12  | 🕕     | 🕕     |          |

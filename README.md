@@ -20,7 +20,7 @@ The goal here is to try to get the basics of each language tried.
 | 8   | ✅     | ✅     | Python      |
 | 9   | ✅     | ✅     | Pascal      |
 | 10  | ✅     | ✅     | WASM Script |
-| 11  | 🕕     | 🕕     | Nim         |
+| 11  | ✅     | ✅     | Nim         |
 | 12  | 🕕     | 🕕     |             |
 | 13  | 🕕     | 🕕     |             |
 | 14  | 🕕     | 🕕     |             |

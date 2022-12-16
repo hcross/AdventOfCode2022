@@ -1,5 +1,0 @@
-# dune init project day9
-# OCAMLPARAM: unset
-# Shared cache: disabled
-# Workspace root: /home/hocro/devel/projects/@hocro/AdventOfCode2022
-# Auto-detected concurrency: 8

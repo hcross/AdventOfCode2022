@@ -22,7 +22,7 @@ The goal here is to try to get the basics of each language tried.
 | 10  | ✅     | ✅     | WASM Script |
 | 11  | ✅     | ✅     | Nim         |
 | 12  | ✅     | ✅     | Nim         |
-| 13  | 🕕     | 🕕     |             |
+| 13  | ✅     | ✅     | Nim         |
 | 14  | 🕕     | 🕕     |             |
 | 15  | 🕕     | 🕕     |             |
 | 16  | 🕕     | 🕕     |             |

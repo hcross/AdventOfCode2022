@@ -24,7 +24,7 @@ The goal here is to try to get the basics of each language tried.
 | 12  | ✅     | ✅     | Nim         |
 | 13  | ✅     | ✅     | Nim         |
 | 14  | ✅     | ✅     | V           |
-| 15  | 🕕     | 🕕     | V           |
+| 15  | ✅     | ✅     | V           |
 | 16  | 🕕     | 🕕     |             |
 | 17  | 🕕     | 🕕     |             |
 | 18  | 🕕     | 🕕     |             |
